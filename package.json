@@ -1,0 +1,30 @@
+{
+  "name": "api-autch",
+  "version": "1.0.0",
+  "description": "api-autch jsw (express)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yan-chesnokov/api-autch.git"
+  },
+  "keywords": [
+    "api",
+    "autch"
+  ],
+  "author": "yan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yan-chesnokov/api-autch/issues"
+  },
+  "homepage": "https://github.com/yan-chesnokov/api-autch#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
