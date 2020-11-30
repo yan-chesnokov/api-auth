@@ -1,1 +1,1 @@
-Node API JWT autch for Express
+Node API JWT auth for Express
