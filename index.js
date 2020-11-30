@@ -7,12 +7,12 @@ dotenv.config();
 
 //connect to DB
 mongoose.connect(process.env.DB_CONNECT || 'mongoose url',{useNewUrlParser:true},() => console.log('connected to DB'))
-//MiddLewara
+//Middleware
 app.use(express.json());
 //import router
 const autchRoute = require('./router/autch');
 app.use('/api/user',autchRoute);
 const postsRoute = require('./router/User');
 app.use('/api/user',postsRoute);
-
+//server start
 app.listen(3000, () => console.log("Server Up and ranning 3000"));

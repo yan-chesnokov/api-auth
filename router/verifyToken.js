@@ -10,8 +10,8 @@ module.exports = function (req,res,next) {
         req.user = verified;
         //TIME LIVE TOKEN
         req.user.dat = dat-req.user.iat;
-        if (req.user.dat<=process.env.TOKEN_LIVE) next();
-        else return res.status(401).send('Access Denied');
+        if (req.user.dat<='200000') next();
+        else return res.status(400).send('Invalid Token');
     }catch(err){
         res.statun(400).send('Invalid Token');
     }
