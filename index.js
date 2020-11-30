@@ -13,6 +13,6 @@ app.use(express.json());
 const autchRoute = require('./router/autch');
 app.use('/api/user',autchRoute);
 const postsRoute = require('./router/User');
-app.use('/api/posts',postsRoute);
+app.use('/api/user',postsRoute);
 
 app.listen(3000, () => console.log("Server Up and ranning 3000"));

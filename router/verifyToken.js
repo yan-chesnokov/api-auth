@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-
+const dat = Math.floor(Date.now() / 1000) - 30;
+const env = require('dotenv')
 module.exports = function (req,res,next) {
     const token = req.header('auth-token');
     if(!token) return res.status(401).send('Access Denied');
@@ -7,7 +8,10 @@ module.exports = function (req,res,next) {
     try{
         const verified = jwt.verify(token, process.env.TOKEN_SECRET || 'Supersecret');
         req.user = verified;
-        next();
+        //TIME LIVE TOKEN
+        req.user.dat = dat-req.user.iat;
+        if (req.user.dat<=process.env.TOKEN_LIVE) next();
+        else return res.status(401).send('Access Denied');
     }catch(err){
         res.statun(400).send('Invalid Token');
     }
